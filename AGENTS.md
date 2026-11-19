@@ -18,6 +18,10 @@ Neither is trained locomotion or validated hardware control.
   normalized residual return value. Preserve canonical actuator ordering.
 - Run measured physics independently of rendering. Replay recorded poses in a
   separate model so mouse/UI interactions cannot change experiment results.
+- `bimo.interactive` is a live, unmeasured sandbox. Keep its keyboard callbacks
+  queue-only, physics single-threaded, and display model separate. Preserve fixed
+  physics/control timesteps when changing tempo. Do not route live input into
+  the deterministic experiment runner.
 - Report requested-command clipping, actual state/force violations, saturation,
   and fall termination separately. Never call displacement alone successful walking.
 - No ML training, hardware modification/control, commits, or pushes without

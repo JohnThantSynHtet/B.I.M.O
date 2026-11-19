@@ -13,6 +13,7 @@ dependencies = ["mujoco==3.6.0", "numpy==2.4.6", "sesame-ml"]
 [project.scripts]
 bimo-smoke = "bimo.smoke:main"
 bimo-gait = "bimo.experiment:main"
+bimo-walk = "bimo.interactive:main"
 
 [dependency-groups]
 dev = ["pytest==9.1.1"]

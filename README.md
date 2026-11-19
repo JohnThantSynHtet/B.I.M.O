@@ -43,6 +43,19 @@ See [the audit and next milestone](docs/setup-audit.md) and
 
 ## Scripted gait experiments and 3D replay
 
+For continuous interactive walking, run from this repository in WSL:
+
+```bash
+env -u PYTHONPATH uv sync --locked
+env -u PYTHONPATH uv run --locked bimo-walk
+```
+
+The window stays open until closed. Select **1** stand, **2** forward,
+**3** backward, **4** turn left, **5** turn right. Use **P** to pause/resume,
+**R** to reset, **− / +** to change gait tempo, and **C** to recenter the camera.
+Left-drag rotates, right-drag pans, and the mouse wheel zooms.
+See [interactive simulator details](docs/interactive-walking.md).
+
 ```bash
 env -u PYTHONPATH uv sync --locked
 env -u PYTHONPATH uv run --locked bimo-gait --output outputs/forward-01

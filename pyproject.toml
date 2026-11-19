@@ -1,0 +1,28 @@
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "bimo"
+version = "0.1.0"
+description = "B.I.M.O headless Sesame simulation checks"
+readme = "README.md"
+requires-python = ">=3.11,<3.12"
+dependencies = ["mujoco==3.6.0", "numpy==2.4.6", "sesame-ml"]
+
+[project.scripts]
+bimo-smoke = "bimo.smoke:main"
+bimo-gait = "bimo.experiment:main"
+
+[dependency-groups]
+dev = ["pytest==9.1.1"]
+
+[tool.uv.sources]
+sesame-ml = { git = "https://github.com/lukehollis/sesame-ml.git", rev = "a3910f67b4aeb9ca9080a1ba1ffa971e53e35a18" }
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/bimo"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"

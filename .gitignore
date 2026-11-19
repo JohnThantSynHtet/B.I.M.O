@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.env
+.env.*
+!.env.example
+artifacts/
+outputs/
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+*.onnx
